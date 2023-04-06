@@ -17,4 +17,5 @@ recursive-exclude docs *
 recursive-exclude examples *.py
 recursive-exclude scripts *.py
 recursive-exclude scripts *.sh
+recursive-exclude scripts Dockerfile
 recursive-exclude tests *.py

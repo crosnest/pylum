@@ -22,15 +22,23 @@
 # ------------------------------------------------------------------------------
 import json
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.distribution import create_withdraw_delegator_reward
-from cosmpy.aerial.client.staking import create_delegate_msg
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import SigningCfg, Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.bank.v1beta1.query_pb2 import QueryTotalSupplyRequest
-from cosmpy.protos.cosmos.params.v1beta1.query_pb2 import QueryParamsRequest
-from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
+from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_chain4energy.aerial.client.distribution import (
+    create_withdraw_delegator_reward,
+)
+from cosmpy_chain4energy.aerial.client.staking import create_delegate_msg
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.tx import SigningCfg, Transaction
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.query_pb2 import (
+    QueryTotalSupplyRequest,
+)
+from cosmpy_chain4energy.protos.cosmos.params.v1beta1.query_pb2 import (
+    QueryParamsRequest,
+)
+from cosmpy_chain4energy.protos.cosmos.staking.v1beta1.query_pb2 import (
+    QueryValidatorsRequest,
+)
 
 
 # This function returns the total reward for given:
@@ -58,11 +66,11 @@ def M(x, f, S, k, D):
 
 def main():
     """Run main."""
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_stable_testnet())
 
     # Set initial stake and desired stake period
-    initial_stake = 50000000000000000000
+    initial_stake = 50000000
     total_period = 60000
 
     req = QueryValidatorsRequest()
@@ -135,14 +143,14 @@ def main():
 
     while alice_balance < initial_stake:
         print("Providing wealth to alice...")
-        faucet_api.get_wealth(alice.address())
+        faucet_api.get_wealth(alice.address(), "100000000uc4e")
         alice_balance = ledger.query_bank_balance(alice.address())
 
     tx = Transaction()
 
     # Add delegate msg
     tx.add_message(
-        create_delegate_msg(alice_address, validator.address, initial_stake, "atestfet")
+        create_delegate_msg(alice_address, validator.address, initial_stake, "uc4e")
     )
 
     # Add claim reward msg
@@ -159,7 +167,7 @@ def main():
     # simulate the fee for the transaction
     _, str_tx_fee = ledger.estimate_gas_and_fee_for_tx(tx)
 
-    denom = "atestfet"
+    denom = "uc4e"
     tx_fee = str_tx_fee[: -len(denom)]
 
     # Add a 20% to the fee estimation to get a more conservative estimate

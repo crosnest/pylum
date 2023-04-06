@@ -21,10 +21,10 @@ from typing import Optional
 
 import pytest
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.aerial.client import LedgerClient
+from cosmpy_chain4energy.aerial.config import NetworkConfig
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
 
 
 MAX_FLAKY_RERUNS = 3
@@ -34,12 +34,12 @@ RERUNS_DELAY = 10
 class TestTx:
     """Test Basic Transaction"""
 
-    COIN = "atestfet"
+    COIN = "uc4e"
     GAS_LIMIT: Optional[int] = None
 
     def _get_network_config(self):
         """Get network config."""
-        return NetworkConfig.fetchai_stable_testnet()
+        return NetworkConfig.chain4energy_integration_testnet()
 
     def get_ledger(self):
         """Get Ledger"""
@@ -49,7 +49,7 @@ class TestTx:
         """Get wallet 1."""
         faucet_api = FaucetApi(self._get_network_config())
         wallet1 = LocalWallet.generate()
-        faucet_api.get_wealth(wallet1.address())
+        faucet_api.get_wealth(wallet1.address(), "100000000uc4e")
         return wallet1
 
     def get_wallet_2(self):
@@ -84,16 +84,16 @@ class TestTx:
 
 
 class TestTxRestAPI(TestTx):
-    """Test dorado rest api"""
+    """Test c4echain rest api"""
 
     def _get_network_config(self):
         return NetworkConfig(
-            chain_id="dorado-1",
-            url="rest+https://rest-dorado.fetch.ai:443",
-            fee_minimum_gas_price=5000000000,
-            fee_denomination="atestfet",
-            staking_denomination="atestfet",
-            faucet_url="https://faucet-dorado.fetch.ai",
+            chain_id="c4echain",
+            url="rest+http://127.0.0.1:1317",
+            fee_minimum_gas_price=0.025,
+            fee_denomination="uc4e",
+            staking_denomination="uc4e",
+            faucet_url="http://127.0.0.1:4500",
         )
 
 

@@ -21,10 +21,10 @@
 import argparse
 import time
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.aerial.client import LedgerClient
+from cosmpy_chain4energy.aerial.config import NetworkConfig
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
 
 
 def _parse_commandline():
@@ -34,7 +34,7 @@ def _parse_commandline():
         type=int,
         nargs="?",
         default=9000000000000000000,
-        help="Initial amount of atestfet to delegate to validator",
+        help="Initial amount of uc4e to delegate to validator",
     )
     parser.add_argument(
         "time_limit",
@@ -58,8 +58,8 @@ def main():
     """Run main."""
     args = _parse_commandline()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_stable_testnet())
 
     # get all the active validators on the network
     validators = ledger.query_validators()
@@ -74,7 +74,7 @@ def main():
 
     while wallet_balance < (initial_stake):
         print("Providing wealth to wallet...")
-        faucet_api.get_wealth(alice.address())
+        faucet_api.get_wealth(alice.address(), "100000000uc4e")
         wallet_balance = ledger.query_bank_balance(alice.address())
 
     # delegate some tokens to this validator

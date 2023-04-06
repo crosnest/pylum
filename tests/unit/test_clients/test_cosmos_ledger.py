@@ -30,23 +30,23 @@
 #
 # from google.protobuf.json_format import MessageToDict, ParseDict
 #
-# from cosmpy.auth.interface import Auth
-# from cosmpy.auth.rest_client import AuthRestClient
-# from cosmpy.bank.rest_client import BankRestClient
-# from cosmpy.clients.crypto import CosmosCrypto
-# from cosmpy.cosmwasm.rest_client import CosmWasmRestClient
-# from cosmpy.crypto.address import Address
-# from cosmpy.crypto.keypairs import PrivateKey
-# from cosmpy.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
-# from cosmpy.protos.cosmos.auth.v1beta1.query_pb2 import (
+# from cosmpy_chain4energy.auth.interface import Auth
+# from cosmpy_chain4energy.auth.rest_client import AuthRestClient
+# from cosmpy_chain4energy.bank.rest_client import BankRestClient
+# from cosmpy_chain4energy.clients.crypto import CosmosCrypto
+# from cosmpy_chain4energy.cosmwasm.rest_client import CosmWasmRestClient
+# from cosmpy_chain4energy.crypto.address import Address
+# from cosmpy_chain4energy.crypto.keypairs import PrivateKey
+# from cosmpy_chain4energy.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
+# from cosmpy_chain4energy.protos.cosmos.auth.v1beta1.query_pb2 import (
 #     QueryAccountRequest,
 #     QueryAccountResponse,
 #     QueryParamsRequest,
 #     QueryParamsResponse,
 # )
-# from cosmpy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
-# from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
-# from cosmpy.protos.cosmos.tx.v1beta1.service_pb2 import (
+# from cosmpy_chain4energy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
+# from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+# from cosmpy_chain4energy.protos.cosmos.tx.v1beta1.service_pb2 import (
 #     BroadcastTxRequest,
 #     BroadcastTxResponse,
 #     GetTxRequest,
@@ -56,8 +56,8 @@
 #     SimulateRequest,
 #     SimulateResponse,
 # )
-# from cosmpy.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
-# from cosmpy.tx.interface import TxInterface
+# from cosmpy_chain4energy.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
+# from cosmpy_chain4energy.tx.interface import TxInterface
 # from tests.helpers import MockRestClient
 #
 # # Private key
@@ -536,7 +536,7 @@
 #         content = {
 #             "account": {
 #                 "@type": "/cosmos.auth.v1beta1.BaseAccount",
-#                 "address": "fetch1h6974x4dspft29r9gyegtajyzaht2cdh0rt93w",
+#                 "address": "c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l",
 #                 "pub_key": {
 #                     "@type": "/cosmos.crypto.secp256k1.PubKey",
 #                     "key": "A2BjpEo54gBpulf9CrA+6tGBASFC8okaO1DYTimk/Jwp",

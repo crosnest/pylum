@@ -1,7 +1,7 @@
 A  [`LedgerClient`](connect-to-network.md) object can be used to query the balances associated with a particular address:
 
 ```python
-address: str = 'fetch12q5gw9l9d0yyq2th77x6pjsesczpsly8h5089x'
+address: str = 'c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l'
 balances = ledger_client.query_bank_all_balances(address)
 ```
 

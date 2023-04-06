@@ -1,10 +1,10 @@
-<a id="cosmpy.aerial.faucet"></a>
+<a id="c4epy.aerial.faucet"></a>
 
-# cosmpy.aerial.faucet
+# c4epy.aerial.faucet
 
 Ledger faucet API interface.
 
-<a id="cosmpy.aerial.faucet.FaucetApi"></a>
+<a id="c4epy.aerial.faucet.FaucetApi"></a>
 
 ## FaucetApi Objects
 
@@ -14,7 +14,7 @@ class FaucetApi()
 
 Faucet API.
 
-<a id="cosmpy.aerial.faucet.FaucetApi.__init__"></a>
+<a id="c4epy.aerial.faucet.FaucetApi.__init__"></a>
 
 #### `__`init`__`
 
@@ -32,12 +32,12 @@ Init faucet API.
 
 - `ValueError`: Network config has no faucet url set
 
-<a id="cosmpy.aerial.faucet.FaucetApi.get_wealth"></a>
+<a id="c4epy.aerial.faucet.FaucetApi.get_wealth"></a>
 
 #### get`_`wealth
 
 ```python
-def get_wealth(address: Union[Address, str]) -> None
+def get_wealth(address: Union[Address, str], coins=None) -> None
 ```
 
 Get wealth from the faucet for the provided address.
@@ -45,6 +45,7 @@ Get wealth from the faucet for the provided address.
 **Arguments**:
 
 - `address`: the address.
+- `coins`: amount and denom asked to faucet
 
 **Raises**:
 

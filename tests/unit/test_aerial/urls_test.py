@@ -21,7 +21,7 @@
 
 import pytest
 
-from cosmpy.aerial.urls import ParsedUrl, Protocol, parse_url
+from cosmpy_chain4energy.aerial.urls import ParsedUrl, Protocol, parse_url
 
 
 @pytest.mark.parametrize(

@@ -24,9 +24,9 @@ import unittest
 import pytest
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.auth.rest_client import AuthRestClient
-from cosmpy.common.utils import json_encode
-from cosmpy.protos.cosmos.auth.v1beta1.query_pb2 import (
+from cosmpy_chain4energy.auth.rest_client import AuthRestClient
+from cosmpy_chain4energy.common.utils import json_encode
+from cosmpy_chain4energy.protos.cosmos.auth.v1beta1.query_pb2 import (
     QueryAccountRequest,
     QueryAccountResponse,
     QueryParamsRequest,
@@ -49,14 +49,13 @@ class AuthRestClientTestCase(unittest.TestCase):
                 "address": "c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l",
                 "pub_key": {
                     "@type": "/cosmos.crypto.secp256k1.PubKey",
-                    "key": "AkFO92OOwGUK+88iMsPrOgh8tqkIbiJMRpPz4ezzyd2q"
+                    "key": "AkFO92OOwGUK+88iMsPrOgh8tqkIbiJMRpPz4ezzyd2q",
                 },
                 "account_number": "0",
-                "sequence": "1"
+                "sequence": "1",
             }
         }
-        # necessary import
-        from cosmpy.protos.cosmos.crypto.secp256k1.keys_pb2 import PubKey
+
         expected_response = ParseDict(content, QueryAccountResponse())
 
         mock_client = MockRestClient(json_encode(content))

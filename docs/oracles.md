@@ -11,14 +11,15 @@ wget https://raw.githubusercontent.com/fetchai/agents-aea/main/packages/fetchai/
 ```
 
 The scripts also require the following imports:
+
 ```python
 from time import sleep
 import requests
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.contract import LedgerContract
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.crypto.address import Address
-from cosmpy.crypto.keypairs import PrivateKey
+from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_chain4energy.aerial.contract import LedgerContract
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.crypto.address import Address
+from cosmpy_chain4energy.crypto.keypairs import PrivateKey
 ```
 
 ## Oracle deployer and updater

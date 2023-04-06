@@ -22,9 +22,9 @@
 import json
 import unittest
 
-from cosmpy.common.utils import json_encode
-from cosmpy.crypto.address import Address
-from cosmpy.crypto.keypairs import PublicKey
+from cosmpy_chain4energy.common.utils import json_encode
+from cosmpy_chain4energy.crypto.address import Address
+from cosmpy_chain4energy.crypto.keypairs import PublicKey
 
 
 class AddressTestCase(unittest.TestCase):
@@ -36,8 +36,8 @@ class AddressTestCase(unittest.TestCase):
             b"\x02W\xbe\xe2\x08\xdc\x80(\xd2\xd0C\xbe\xe0{\x02\x81\xa6\xf9Y\x19\x0e\xd1\x8a*\x99\x84\xd6e\x07\x99\x8d\x96h"
         )
         address = Address(pk)
-        self.assertEqual(str(address), "fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
-        self.assertEqual(address, "fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
+        self.assertEqual(str(address), "c4e12hyw0z8za0sc9wwfhkdz2qrc89a87z423p6ch6")
+        self.assertEqual(address, "c4e12hyw0z8za0sc9wwfhkdz2qrc89a87z423p6ch6")
         self.assertEqual(
             bytes(address),
             b"U\xc8\xe7\x88\xe2\xeb\xe1\x82\xb9\xc9\xbd\x9a%\x00x9z\x7f\n\xaa",
@@ -56,11 +56,11 @@ class AddressTestCase(unittest.TestCase):
         address = Address(
             b"U\xc8\xe7\x88\xe2\xeb\xe1\x82\xb9\xc9\xbd\x9a%\x00x9z\x7f\n\xaa"
         )
-        self.assertEqual(str(address), "fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
+        self.assertEqual(str(address), "c4e12hyw0z8za0sc9wwfhkdz2qrc89a87z423p6ch6")
 
     def test_create_from_str(self):
         """Test create Address from string with positive result."""
-        address = Address("fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
+        address = Address("c4e12hyw0z8za0sc9wwfhkdz2qrc89a87z423p6ch6")
         self.assertEqual(
             bytes(address),
             b"U\xc8\xe7\x88\xe2\xeb\xe1\x82\xb9\xc9\xbd\x9a%\x00x9z\x7f\n\xaa",
@@ -78,15 +78,15 @@ class AddressTestCase(unittest.TestCase):
 
     def test_address_from_address_with_custom_prefix(self):
         """Test create an Address from another but with a custom prefix."""
-        address = Address("fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
-        val_address = Address(address, prefix="fetchvaloper")
+        address = Address("c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l")
+        val_address = Address(address, prefix="c4evaloper")
         self.assertEqual(
             str(val_address), "fetchvaloper12hyw0z8za0sc9wwfhkdz2qrc89a87z42yq4jl5"
         )
 
     def test_string_compatible_address(self):
         """Test address can be dumped to json using json_encode utility method."""
-        address = Address("fetch12hyw0z8za0sc9wwfhkdz2qrc89a87z42py23vn")
+        address = Address("c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l")
         json_data = json_encode({"address": address})
         restored_address = Address(json.loads(json_data)["address"])
         assert restored_address == address

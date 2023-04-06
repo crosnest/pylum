@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "cosmpy"
-version = "0.8.0"
-description = "A library for interacting with the cosmos networks"
-authors = ["Fetch.AI Limited"]
+name = "pylum"
+version = "1.4.5"
+description = "A library for interacting with the Lum networks"
+authors = ["Fetch.AI Limited", "Cros Nest B.V."]
 readme = "README.md"
 license = "Apache-2.0"
-homepage = "https://github.com/fetchai/cosmpy"
-repository = "https://github.com/fetchai/cosmpy"
+homepage = "https://github.com/crosnest/pylum"
+repository = "https://github.com/crosnest/pylum"
 documentation = "https://docs.fetch.ai/CosmPy/"
-keywords = ["CosmPy", "Cosmos-SDK"]
+keywords = ["pylum", "CosmPy", "Cosmos-SDK"]
 classifiers=[
     "Environment :: Console",
     "Development Status :: 3 - Alpha",
@@ -91,7 +91,7 @@ exclude = "whitelist.py"
 
 [[tool.mypy.overrides]]
 module = [
-    "cosmpy.protos.*",
+    "pylum.protos.*",
 ]
 ignore_errors = true
 
@@ -126,10 +126,10 @@ order_by_type = false
 case_sensitive = true
 lines_after_imports = 2
 skip = [
-    "cosmpy/protos",
+    "pylum/protos",
     ]
 skip_glob = "**/*_pb2.py"
-known_first_party = "cosmpy"
+known_first_party = "pylum"
 known_local_folder = "tests"
 sections = ["FUTURE",'STDLIB',"THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
 
@@ -166,7 +166,7 @@ omit = [
     "*/.local/*",
     "tests/*",
     "*/.tox/*",
-    "cosmpy/protos/*",
+    "pylum/protos/*",
 ]
 
 [tool.coverage.html]

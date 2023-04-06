@@ -23,15 +23,17 @@ from datetime import datetime, timedelta
 
 from google.protobuf import any_pb2, timestamp_pb2
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.utils import prepare_and_broadcast_basic_transaction
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
-from cosmpy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
-from cosmpy.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
-from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_chain4energy.aerial.client.utils import (
+    prepare_and_broadcast_basic_transaction,
+)
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.tx import Transaction
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
+from cosmpy_chain4energy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
+from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
+from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 
 def _parse_commandline():
@@ -66,8 +68,8 @@ def main():
 
     authz_address = args.authz_address
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_stable_testnet())
 
     total_authz_time = args.total_authz_time
     wallet_balance = ledger.query_bank_balance(wallet.address())
@@ -76,10 +78,10 @@ def main():
 
     while wallet_balance < (amount):
         print("Providing wealth to wallet...")
-        faucet_api.get_wealth(wallet.address())
+        faucet_api.get_wealth(wallet.address(), "100000000uc4e")
         wallet_balance = ledger.query_bank_balance(wallet.address())
 
-    spend_amount = Coin(amount=str(amount), denom="atestfet")
+    spend_amount = Coin(amount=str(amount), denom="uc4e")
 
     # Authorize authz_wallet to send tokens from wallet
     authz_any = any_pb2.Any()

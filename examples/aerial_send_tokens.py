@@ -18,9 +18,9 @@
 #   limitations under the License.
 #
 # ------------------------------------------------------------------------------
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
 
 
 def main():
@@ -28,14 +28,14 @@ def main():
     alice = LocalWallet.generate()
     bob = LocalWallet.generate()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_stable_testnet())
 
     alice_balance = ledger.query_bank_balance(bob.address())
 
     while alice_balance < (10**18):
         print("Providing wealth to alice...")
-        faucet_api.get_wealth(alice.address())
+        faucet_api.get_wealth(alice.address(), "100000000uc4e")
         alice_balance = ledger.query_bank_balance(alice.address())
 
     print(
@@ -45,7 +45,7 @@ def main():
         f"Bob   Address: {bob.address()} Balance: {ledger.query_bank_balance(bob.address())}"
     )
 
-    tx = ledger.send_tokens(bob.address(), 10, "atestfet", alice)
+    tx = ledger.send_tokens(bob.address(), 10, "uc4e", alice)
 
     print(f"TX {tx.tx_hash} waiting to complete...")
     tx.wait_to_complete()

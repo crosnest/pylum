@@ -14,13 +14,6 @@ Contributions to the CosmPy library are welcome. As a contributor, here are the 
 
 Please read and follow our [Code of Conduct][coc].
 
-## <a name="question"></a> Question or Problem?
-
-Please use [GitHub Discussions][ghdiscussion] for support related questions and general discussions. Do NOT open issues as they are for bug reports and feature requests. This is because:
-
-- Questions and answers stay available for public viewing so your question/answer might help someone else.
-- GitHub Discussions voting system ensures the best answers are prominently visible.
-
 ## <a name="issue"></a> Found a Bug?
 
 If you find a bug in the source code [submit a bug report issue](#submit-issue).
@@ -118,11 +111,10 @@ Please follow the [Conventional Commits v1.0.0][convcommit]. The commit types mu
 - **refactor**: A code change that neither fixes a bug nor adds a feature
 - **test**: Adding missing tests or correcting existing tests
 
-[coc]: https://github.com/fetchai/cosmpy/blob/main/CODE_OF_CONDUCT.md
-[developing]: https://github.com/fetchai/cosmpy/blob/main/DEVELOPING.md
-[ghdiscussion]: https://github.com/fetchai/cosmpy/discussions
-[issues]: https://github.com/fetchai/cosmpy/issues
-[new-issue]: https://github.com/fetchai/cosmpy/issues/new/choose
-[prs]: https://github.com/fetchai/cosmpy/pulls
+[coc]: https://github.com/crosnest/pylum/blob/main/CODE_OF_CONDUCT.md
+[developing]: https://github.com/crosnest/pylum/blob/main/DEVELOPING.md
+[issues]: https://github.com/crosnest/pylum/issues
+[new-issue]: https://github.com/crosnest/pylum/issues/new/choose
+[prs]: https://github.com/crosnest/pylum/pulls
 [convcommit]: https://www.conventionalcommits.org/en/v1.0.0/
-[github]: https://github.com/fetchai/cosmpy
+[github]: https://github.com/crosnest/pylum

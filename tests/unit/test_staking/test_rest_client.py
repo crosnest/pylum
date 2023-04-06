@@ -23,8 +23,8 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy.common.utils import json_encode
-from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import (
+from cosmpy_chain4energy.common.utils import json_encode
+from cosmpy_chain4energy.protos.cosmos.staking.v1beta1.query_pb2 import (
     QueryDelegationRequest,
     QueryDelegationResponse,
     QueryDelegatorDelegationsRequest,
@@ -54,7 +54,7 @@ from cosmpy.protos.cosmos.staking.v1beta1.query_pb2 import (
     QueryValidatorsRequest,
     QueryValidatorsResponse,
 )
-from cosmpy.staking.rest_client import StakingRestClient
+from cosmpy_chain4energy.staking.rest_client import StakingRestClient
 
 from tests.helpers import MockRestClient
 
@@ -152,7 +152,7 @@ class StakingRestClientTestCase(TestCase):
                         "validator_address": "fetchvalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "atestfet", "amount": "12345"},
+                    "balance": {"denom": "uc4e", "amount": "12345"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -225,7 +225,7 @@ class StakingRestClientTestCase(TestCase):
                     "validator_address": "fetchvalidator",
                     "shares": "123",
                 },
-                "balance": {"denom": "atestfet", "amount": "123"},
+                "balance": {"denom": "uc4e", "amount": "123"},
             }
         }
         mock_client = MockRestClient(json_encode(content))
@@ -294,7 +294,7 @@ class StakingRestClientTestCase(TestCase):
                         "validator_address": "fetchvalidator",
                         "shares": "123",
                     },
-                    "balance": {"denom": "atestfet", "amount": "123"},
+                    "balance": {"denom": "uc4e", "amount": "123"},
                 }
             ],
             "pagination": {"next_key": "", "total": "0"},
@@ -600,7 +600,7 @@ class StakingRestClientTestCase(TestCase):
                 "max_validators": 0,
                 "max_entries": 0,
                 "historical_entries": 0,
-                "bond_denom": "atestfet",
+                "bond_denom": "uc4e",
             }
         }
 

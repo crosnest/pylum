@@ -23,14 +23,16 @@ import time
 
 from google.protobuf import any_pb2
 
-from cosmpy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy.aerial.client.utils import prepare_and_broadcast_basic_transaction
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx import Transaction
-from cosmpy.aerial.wallet import LocalWallet
-from cosmpy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgExec
-from cosmpy.protos.cosmos.bank.v1beta1.tx_pb2 import MsgSend
-from cosmpy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_chain4energy.aerial.client.utils import (
+    prepare_and_broadcast_basic_transaction,
+)
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.tx import Transaction
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgExec
+from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.tx_pb2 import MsgSend
+from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 
 def _parse_commandline():
@@ -66,7 +68,7 @@ def _parse_commandline():
 
 def main():
     """Run main."""
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_stable_testnet())
     args = _parse_commandline()
 
     wallet_address = args.wallet_address
@@ -75,20 +77,20 @@ def main():
 
     # Use aerial_authz.py to authorize authz_wallet address to send tokens from wallet
     authz_wallet = LocalWallet.generate()
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_stable_testnet())
 
     wallet_balance = ledger.query_bank_balance(authz_wallet.address())
 
     while wallet_balance < (10**18):
         print("Providing wealth to wallet...")
-        faucet_api.get_wealth(authz_wallet.address())
+        faucet_api.get_wealth(authz_wallet.address(), "100000000uc4e")
         wallet_balance = ledger.query_bank_balance(authz_wallet.address())
 
     ledger = LedgerClient(NetworkConfig.latest_stable_testnet())
 
     # Top-up amount
     amount = args.top_up_amount
-    top_up_amount = Coin(amount=str(amount), denom="atestfet")
+    top_up_amount = Coin(amount=str(amount), denom="uc4e")
 
     # Minimum balance for task_wallet
     minimum_balance = args.minimum_balance

@@ -20,11 +20,11 @@
 # ------------------------------------------------------------------------------
 import random
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.aerial.config import NetworkConfig
-from cosmpy.aerial.faucet import FaucetApi
-from cosmpy.aerial.tx_helpers import SubmittedTx
-from cosmpy.aerial.wallet import LocalWallet
+from cosmpy_chain4energy.aerial.client import LedgerClient
+from cosmpy_chain4energy.aerial.config import NetworkConfig
+from cosmpy_chain4energy.aerial.faucet import FaucetApi
+from cosmpy_chain4energy.aerial.tx_helpers import SubmittedTx
+from cosmpy_chain4energy.aerial.wallet import LocalWallet
 
 
 def _wait_for_tx(operation: str, tx: SubmittedTx):
@@ -37,14 +37,14 @@ def main():
     """Run main."""
     alice = LocalWallet.generate()
 
-    ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
-    faucet_api = FaucetApi(NetworkConfig.fetchai_stable_testnet())
+    ledger = LedgerClient(NetworkConfig.chain4energy_integration_testnet())
+    faucet_api = FaucetApi(NetworkConfig.chain4energy_integration_testnet())
 
     alice_balance = ledger.query_bank_balance(alice.address())
 
-    while alice_balance < (10**18):
+    while alice_balance < (10**6):
         print("Providing wealth to alice...")
-        faucet_api.get_wealth(alice.address())
+        faucet_api.get_wealth(alice.address(), "1000000uc4e")
         alice_balance = ledger.query_bank_balance(alice.address())
 
     # get all the active validators on the network

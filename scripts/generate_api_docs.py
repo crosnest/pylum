@@ -29,30 +29,32 @@ from pathlib import Path
 
 DOCS_DIR = Path("docs/")
 API_DIR = DOCS_DIR / "api/"
-COSMPY_DIR = Path("cosmpy")
+COSMPY_DIR = Path("cosmpy_chain4energy")
 
 IGNORE_NAMES = {r"^__version__\.py$", r"^py\.typed$", r"^.*_pb2.py$"}
 IGNORE_PREFIXES = {
-    Path("cosmpy", "__init__.py"),
-    Path("cosmpy", "aerial", "__init__.py"),
-    Path("cosmpy", "auth"),
-    Path("cosmpy", "bank"),
-    Path("cosmpy", "common"),
-    Path("cosmpy", "cosmwasm"),
-    Path("cosmpy", "crypto"),
-    Path("cosmpy", "distribution"),
-    Path("cosmpy", "evidence"),
-    Path("cosmpy", "gov"),
-    Path("cosmpy", "ibc"),
-    Path("cosmpy", "mint"),
-    Path("cosmpy", "params"),
-    Path("cosmpy", "protos"),
-    Path("cosmpy", "slashing"),
-    Path("cosmpy", "staking"),
-    Path("cosmpy", "tendermint"),
-    Path("cosmpy", "tx"),
-    Path("cosmpy", "upgrade"),
-    Path("cosmpy", "whitelist.py"),
+    Path("cosmpy_chain4energy", "__init__.py"),
+    Path("cosmpy_chain4energy", "aerial", "__init__.py"),
+    Path("cosmpy_chain4energy", "auth"),
+    Path("cosmpy_chain4energy", "bank"),
+    Path("cosmpy_chain4energy", "cfedistributor"),
+    Path("cosmpy_chain4energy", "cfeminter"),
+    Path("cosmpy_chain4energy", "cfesignature"),
+    Path("cosmpy_chain4energy", "cfevesting"),
+    Path("cosmpy_chain4energy", "common"),
+    Path("cosmpy_chain4energy", "crypto"),
+    Path("cosmpy_chain4energy", "distribution"),
+    Path("cosmpy_chain4energy", "evidence"),
+    Path("cosmpy_chain4energy", "gov"),
+    Path("cosmpy_chain4energy", "ibc"),
+    Path("cosmpy_chain4energy", "params"),
+    Path("cosmpy_chain4energy", "protos"),
+    Path("cosmpy_chain4energy", "slashing"),
+    Path("cosmpy_chain4energy", "staking"),
+    Path("cosmpy_chain4energy", "tendermint"),
+    Path("cosmpy_chain4energy", "tx"),
+    Path("cosmpy_chain4energy", "upgrade"),
+    Path("cosmpy_chain4energy", "whitelist.py"),
 }
 
 
@@ -103,7 +105,7 @@ def should_skip(module_path: Path) -> bool:
 
 
 def _generate_apidocs_cosmpy_modules() -> None:
-    """Generate API docs for cosmpy.* modules."""
+    """Generate API docs for cosmpy_chain4energy.* modules."""
     for module_path in filter(is_not_dir, Path(COSMPY_DIR).rglob("*")):
         print(f"Processing {module_path}... ", end="")
         if should_skip(module_path):
