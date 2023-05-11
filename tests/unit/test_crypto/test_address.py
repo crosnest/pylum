@@ -81,7 +81,7 @@ class AddressTestCase(unittest.TestCase):
         address = Address("c4e1t62t32vvkr78zdws3jvu9rxjkz3fy0ex4v7e7l")
         val_address = Address(address, prefix="c4evaloper")
         self.assertEqual(
-            str(val_address), "fetchvaloper12hyw0z8za0sc9wwfhkdz2qrc89a87z42yq4jl5"
+            str(val_address), "c4evaloper1t62t32vvkr78zdws3jvu9rxjkz3fy0ex9drnlg"
         )
 
     def test_string_compatible_address(self):

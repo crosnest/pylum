@@ -1,10 +1,10 @@
-<a id="c4epy.aerial.config"></a>
+<a id="cosmpy_chain4energy.aerial.config"></a>
 
-# c4epy.aerial.config
+# cosmpy`_`chain4energy.aerial.config
 
 Network configurations.
 
-<a id="c4epy.aerial.config.NetworkConfigError"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfigError"></a>
 
 ## NetworkConfigError Objects
 
@@ -18,7 +18,7 @@ Network config error.
 
 - `RuntimeError`: Runtime error
 
-<a id="c4epy.aerial.config.NetworkConfig"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig"></a>
 
 ## NetworkConfig Objects
 
@@ -34,7 +34,7 @@ Network configurations.
 - `NetworkConfigError`: Network config error
 - `RuntimeError`: Runtime error
 
-<a id="c4epy.aerial.config.NetworkConfig.validate"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.validate"></a>
 
 #### validate
 
@@ -48,7 +48,7 @@ Validate the network configuration.
 
 - `NetworkConfigError`: Network config error
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_veles_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_veles_testnet"></a>
 
 #### chain4energy`_`veles`_`testnet
 
@@ -63,7 +63,7 @@ Chain4energy veles testnet.
 
 Network configuration
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_alpha_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_alpha_testnet"></a>
 
 #### chain4energy`_`alpha`_`testnet
 
@@ -78,7 +78,7 @@ Get the Chain4energy alpha testnet.
 
 - `RuntimeError`: No alpha testnet available
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_beta_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_beta_testnet"></a>
 
 #### chain4energy`_`beta`_`testnet
 
@@ -93,7 +93,7 @@ Get the Chain4energy beta testnet.
 
 - `RuntimeError`: No beta testnet available
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_integration_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_integration_testnet"></a>
 
 #### chain4energy`_`integration`_`testnet
 
@@ -108,7 +108,7 @@ Get the Chain4energy alpha testnet.
 
 Chain4energy integration testnet.
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_stable_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_stable_testnet"></a>
 
 #### chain4energy`_`stable`_`testnet
 
@@ -123,7 +123,7 @@ Get the Chain4energy stable testnet.
 
 Chain4energy stable testnet. For now veles is Chain4energy stable testnet.
 
-<a id="c4epy.aerial.config.NetworkConfig.chain4energy_mainnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.chain4energy_mainnet"></a>
 
 #### chain4energy`_`mainnet
 
@@ -138,7 +138,7 @@ Get the chain4energy mainnet configuration.
 
 C4E mainnet configuration
 
-<a id="c4epy.aerial.config.NetworkConfig.latest_stable_testnet"></a>
+<a id="cosmpy_chain4energy.aerial.config.NetworkConfig.latest_stable_testnet"></a>
 
 #### latest`_`stable`_`testnet
 

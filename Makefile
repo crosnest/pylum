@@ -105,7 +105,7 @@ black-check:
 # Check the imports are sorted
 .PHONY: isort-check
 isort-check:
-	isort --check-only --verbose $(PYTHON_CODE_DIRS)
+	isort --check-only --quiet --verbose $(PYTHON_CODE_DIRS)
 
 # Run flake8 linter
 .PHONY: flake8

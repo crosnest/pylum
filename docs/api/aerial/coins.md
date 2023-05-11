@@ -1,10 +1,10 @@
-<a id="c4epy.aerial.coins"></a>
+<a id="cosmpy_chain4energy.aerial.coins"></a>
 
-# c4epy.aerial.coins
+# cosmpy`_`chain4energy.aerial.coins
 
 Parse the coins.
 
-<a id="c4epy.aerial.coins.parse_coins"></a>
+<a id="cosmpy_chain4energy.aerial.coins.parse_coins"></a>
 
 #### parse`_`coins
 
