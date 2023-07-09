@@ -21,7 +21,7 @@
 
 import pytest
 
-from cosmpy_lumnetwork.aerial.urls import ParsedUrl, Protocol, parse_url
+from pylum.aerial.urls import ParsedUrl, Protocol, parse_url
 
 
 @pytest.mark.parametrize(

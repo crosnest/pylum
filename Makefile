@@ -10,8 +10,8 @@ CHAIN_URL := https://github.com/lum-network/chain
 CHAIN_VERSION := v1.4.5
 CHAIN_DIR := build/chain-proto-schema
 
-PYLUM_PROTOS_DIR := cosmpy_lumnetwork/protos
-PYLUM_SRC_DIR := cosmpy_lumnetwork
+PYLUM_PROTOS_DIR := pylum/protos
+PYLUM_SRC_DIR := pylum
 PYLUM_TESTS_DIR := tests
 PYLUM_EXAMPLES_DIR := examples
 PYLUM_SCRIPTS_DIR := scripts

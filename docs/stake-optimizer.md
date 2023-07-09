@@ -7,8 +7,8 @@ When you delegate tokens to a validator for a determined period, you can use the
 First, you need to define a network to work with.
 
 ```python
-from cosmpy_lumnetwork.aerial.client import LedgerClient
-from cosmpy_lumnetwork.aerial.config import NetworkConfig
+from pylum.aerial.client import LedgerClient
+from pylum.aerial.config import NetworkConfig
 
 ledger = LedgerClient(NetworkConfig.fetchai_stable_testnet())
 ```
@@ -29,7 +29,7 @@ total_period = 60000
 We will now select a validator to delegate our tokens. We will do this by analyzing which one has the lowest `commission` and a reasonable amount of stake delegated compared to the total stake.
 
 ```python
-from cosmpy_lumnetwork.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
+from pylum.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
 
 req = QueryValidatorsRequest()
 resp = ledger.staking.Validators(req)
@@ -71,13 +71,13 @@ pct_delegated = initial_stake/total_stake
 We need to know an estimate of the transaction fees it will cost every time we claim rewards and delegate tokens. For that, both claim rewards and delegate tokens transactions were combined into a single multi-msg transaction to simulate the total fees.
 
 ```python
-from cosmpy_lumnetwork.aerial.client.distribution import create_withdraw_delegator_reward
-from cosmpy_lumnetwork.aerial.client.staking import create_delegate_msg
-from cosmpy_lumnetwork.aerial.tx import SigningCfg
-from cosmpy_lumnetwork.aerial.wallet import LocalWallet
-from cosmpy_lumnetwork.crypto.keypairs import PrivateKey
-from cosmpy_lumnetwork.crypto.address import Address
-from cosmpy_lumnetwork.aerial.tx import Transaction
+from pylum.aerial.client.distribution import create_withdraw_delegator_reward
+from pylum.aerial.client.staking import create_delegate_msg
+from pylum.aerial.tx import SigningCfg
+from pylum.aerial.wallet import LocalWallet
+from pylum.crypto.keypairs import PrivateKey
+from pylum.crypto.address import Address
+from pylum.aerial.tx import Transaction
 
 # Use any address with at least the amount of initial_stake available
 key = PrivateKey("XZ5BZQcr+FNl2usnSIQYpXsGWvBxKLRDkieUNIvMOV7=")

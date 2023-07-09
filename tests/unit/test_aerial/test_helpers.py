@@ -21,10 +21,10 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from cosmpy_lumnetwork.aerial.client import LedgerClient
-from cosmpy_lumnetwork.aerial.config import NetworkConfig
-from cosmpy_lumnetwork.aerial.exceptions import NotFoundError, QueryTimeoutError
-from cosmpy_lumnetwork.aerial.tx_helpers import SubmittedTx
+from pylum.aerial.client import LedgerClient
+from pylum.aerial.config import NetworkConfig
+from pylum.aerial.exceptions import NotFoundError, QueryTimeoutError
+from pylum.aerial.tx_helpers import SubmittedTx
 
 
 def test_broadcast_tx_timeouts():

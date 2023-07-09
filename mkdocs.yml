@@ -2,7 +2,7 @@ site_name: pylum
 site_url: https://docs.fetch.ai/cosmpy
 site_description: Everything you need to know about pylum.
 repo_url: https://github.com/crosnest/pylum
-repo_name: crosnest/cosmpy_lumnetwork
+repo_name: crosnest/pylum
 edit_uri: ""
 site_author: chainmaster@cros-nest.com
 copyright: Copyright &copy; 2018 - 2023 Fetch.ai | 2023 Cros-Nest # Copyright notice in footer

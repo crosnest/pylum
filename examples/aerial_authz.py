@@ -21,17 +21,17 @@
 import argparse
 from datetime import datetime, timedelta
 
-from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_lumnetwork.aerial.client.utils import (
+from pylum.aerial.client import LedgerClient, NetworkConfig
+from pylum.aerial.client.utils import (
     prepare_and_broadcast_basic_transaction,
 )
-from cosmpy_lumnetwork.aerial.faucet import FaucetApi
-from cosmpy_lumnetwork.aerial.tx import Transaction
-from cosmpy_lumnetwork.aerial.wallet import LocalWallet
-from cosmpy_lumnetwork.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
-from cosmpy_lumnetwork.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
-from cosmpy_lumnetwork.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
-from cosmpy_lumnetwork.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from pylum.aerial.faucet import FaucetApi
+from pylum.aerial.tx import Transaction
+from pylum.aerial.wallet import LocalWallet
+from pylum.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
+from pylum.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
+from pylum.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
+from pylum.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 from google.protobuf import any_pb2, timestamp_pb2
 
 

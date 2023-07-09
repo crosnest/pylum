@@ -20,8 +20,8 @@
 # ------------------------------------------------------------------------------
 import datetime
 
-from cosmpy.aerial.client import LedgerClient
-from cosmpy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse as PbTxResponse
+from pylum.aerial.client import LedgerClient
+from pylum.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse as PbTxResponse
 
 
 def test_parsing_tx_response():

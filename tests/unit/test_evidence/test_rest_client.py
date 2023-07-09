@@ -22,9 +22,9 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_lumnetwork.common.utils import json_encode
-from cosmpy_lumnetwork.evidence.rest_client import EvidenceRestClient
-from cosmpy_lumnetwork.protos.cosmos.evidence.v1beta1.query_pb2 import (
+from pylum.common.utils import json_encode
+from pylum.evidence.rest_client import EvidenceRestClient
+from pylum.protos.cosmos.evidence.v1beta1.query_pb2 import (
     QueryAllEvidenceRequest,
     QueryAllEvidenceResponse,
     QueryEvidenceRequest,

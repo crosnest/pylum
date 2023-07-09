@@ -18,9 +18,9 @@
 #   limitations under the License.
 #
 # ------------------------------------------------------------------------------
-from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_lumnetwork.aerial.faucet import FaucetApi
-from cosmpy_lumnetwork.aerial.wallet import LocalWallet
+from pylum.aerial.client import LedgerClient, NetworkConfig
+from pylum.aerial.faucet import FaucetApi
+from pylum.aerial.wallet import LocalWallet
 
 
 def main():
