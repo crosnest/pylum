@@ -21,17 +21,15 @@
 import argparse
 import time
 
+from google.protobuf import any_pb2
 from pylum.aerial.client import LedgerClient, NetworkConfig
-from pylum.aerial.client.utils import (
-    prepare_and_broadcast_basic_transaction,
-)
+from pylum.aerial.client.utils import prepare_and_broadcast_basic_transaction
 from pylum.aerial.faucet import FaucetApi
 from pylum.aerial.tx import Transaction
 from pylum.aerial.wallet import LocalWallet
 from pylum.protos.cosmos.authz.v1beta1.tx_pb2 import MsgExec
 from pylum.protos.cosmos.bank.v1beta1.tx_pb2 import MsgSend
 from pylum.protos.cosmos.base.v1beta1.coin_pb2 import Coin
-from google.protobuf import any_pb2
 
 
 def _parse_commandline():

@@ -1,10 +1,10 @@
-<a id="cosmpy_lumnetwork.aerial.client.utils"></a>
+<a id="pylum.aerial.client.utils"></a>
 
-# cosmpy`_`chain4energy.aerial.client.utils
+# pylum.aerial.client.utils
 
 Helper functions.
 
-<a id="cosmpy_lumnetwork.aerial.client.utils.prepare_and_broadcast_basic_transaction"></a>
+<a id="pylum.aerial.client.utils.prepare_and_broadcast_basic_transaction"></a>
 
 #### prepare`_`and`_`broadcast`_`basic`_`transaction
 
@@ -33,7 +33,7 @@ Prepare and broadcast basic transaction.
 
 broadcast transaction
 
-<a id="cosmpy_lumnetwork.aerial.client.utils.ensure_timedelta"></a>
+<a id="pylum.aerial.client.utils.ensure_timedelta"></a>
 
 #### ensure`_`timedelta
 
@@ -51,7 +51,7 @@ Return timedelta for interval.
 
 timedelta
 
-<a id="cosmpy_lumnetwork.aerial.client.utils.get_paginated"></a>
+<a id="pylum.aerial.client.utils.get_paginated"></a>
 
 #### get`_`paginated
 

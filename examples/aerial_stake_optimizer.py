@@ -23,20 +23,14 @@
 import json
 
 from pylum.aerial.client import LedgerClient, NetworkConfig
-from pylum.aerial.client.distribution import (
-    create_withdraw_delegator_reward,
-)
+from pylum.aerial.client.distribution import create_withdraw_delegator_reward
 from pylum.aerial.client.staking import create_delegate_msg
 from pylum.aerial.faucet import FaucetApi
 from pylum.aerial.tx import SigningCfg, Transaction
 from pylum.aerial.wallet import LocalWallet
-from pylum.protos.cosmos.bank.v1beta1.query_pb2 import (
-    QueryTotalSupplyRequest,
-)
+from pylum.protos.cosmos.bank.v1beta1.query_pb2 import QueryTotalSupplyRequest
 from pylum.protos.cosmos.params.v1beta1.query_pb2 import QueryParamsRequest
-from pylum.protos.cosmos.staking.v1beta1.query_pb2 import (
-    QueryValidatorsRequest,
-)
+from pylum.protos.cosmos.staking.v1beta1.query_pb2 import QueryValidatorsRequest
 
 
 # This function returns the total reward for given:

@@ -1,10 +1,10 @@
-<a id="cosmpy_lumnetwork.aerial.coins"></a>
+<a id="pylum.aerial.coins"></a>
 
-# cosmpy`_`chain4energy.aerial.coins
+# pylum.aerial.coins
 
 Parse the coins.
 
-<a id="cosmpy_lumnetwork.aerial.coins.parse_coins"></a>
+<a id="pylum.aerial.coins.parse_coins"></a>
 
 #### parse`_`coins
 

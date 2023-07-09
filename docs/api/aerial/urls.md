@@ -1,10 +1,10 @@
-<a id="cosmpy_lumnetwork.aerial.urls"></a>
+<a id="pylum.aerial.urls"></a>
 
-# cosmpy`_`chain4energy.aerial.urls
+# pylum.aerial.urls
 
 Parsing the URL.
 
-<a id="cosmpy_lumnetwork.aerial.urls.Protocol"></a>
+<a id="pylum.aerial.urls.Protocol"></a>
 
 ## Protocol Objects
 
@@ -18,7 +18,7 @@ Protocol Enum.
 
 - `Enum`: Enum
 
-<a id="cosmpy_lumnetwork.aerial.urls.ParsedUrl"></a>
+<a id="pylum.aerial.urls.ParsedUrl"></a>
 
 ## ParsedUrl Objects
 
@@ -33,7 +33,7 @@ Parse URL.
 
 Parsed URL
 
-<a id="cosmpy_lumnetwork.aerial.urls.ParsedUrl.host_and_port"></a>
+<a id="pylum.aerial.urls.ParsedUrl.host_and_port"></a>
 
 #### host`_`and`_`port
 
@@ -48,7 +48,7 @@ Get the host and port of the url.
 
 host and port
 
-<a id="cosmpy_lumnetwork.aerial.urls.ParsedUrl.rest_url"></a>
+<a id="pylum.aerial.urls.ParsedUrl.rest_url"></a>
 
 #### rest`_`url
 
@@ -63,7 +63,7 @@ Get the rest url.
 
 rest url
 
-<a id="cosmpy_lumnetwork.aerial.urls.parse_url"></a>
+<a id="pylum.aerial.urls.parse_url"></a>
 
 #### parse`_`url
 

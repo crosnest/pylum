@@ -40,9 +40,7 @@ from pylum.protos.cosmos.bank.v1beta1.query_pb2 import (
     QueryTotalSupplyRequest,
     QueryTotalSupplyResponse,
 )
-from pylum.protos.cosmos.base.query.v1beta1.pagination_pb2 import (
-    PageResponse,
-)
+from pylum.protos.cosmos.base.query.v1beta1.pagination_pb2 import PageResponse
 from pylum.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 from tests.helpers import MockRestClient

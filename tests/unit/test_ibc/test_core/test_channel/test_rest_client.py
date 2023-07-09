@@ -24,9 +24,7 @@ from google.protobuf.json_format import ParseDict
 from google.protobuf.wrappers_pb2 import Int32Value  # noqa # needed for protobuf decode
 
 from pylum.common.utils import json_encode
-from pylum.ibc.core.channel.rest_client import (
-    IBCCoreChannelRestClient,  # type: ignore
-)
+from pylum.ibc.core.channel.rest_client import IBCCoreChannelRestClient  # type: ignore
 from pylum.protos.ibc.core.channel.v1.query_pb2 import (
     QueryChannelClientStateRequest,
     QueryChannelClientStateResponse,

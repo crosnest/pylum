@@ -20,9 +20,7 @@
 from google.protobuf.json_format import Parse
 
 from pylum.common.rest_client import RestClient
-from pylum.ibc.core.connection.interface import (
-    IBCCoreConnection,  # type: ignore
-)
+from pylum.ibc.core.connection.interface import IBCCoreConnection  # type: ignore
 from pylum.protos.ibc.core.connection.v1.query_pb2 import (
     QueryClientConnectionsRequest,
     QueryClientConnectionsResponse,

@@ -1,10 +1,10 @@
-<a id="cosmpy_lumnetwork.aerial.client.bank"></a>
+<a id="pylum.aerial.client.bank"></a>
 
-# cosmpy`_`chain4energy.aerial.client.bank
+# pylum.aerial.client.bank
 
 Bank send message.
 
-<a id="cosmpy_lumnetwork.aerial.client.bank.create_bank_send_msg"></a>
+<a id="pylum.aerial.client.bank.create_bank_send_msg"></a>
 
 #### create`_`bank`_`send`_`msg
 

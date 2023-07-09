@@ -19,9 +19,7 @@
 """Distribution."""
 
 from pylum.crypto.address import Address
-from pylum.protos.cosmos.distribution.v1beta1.tx_pb2 import (
-    MsgWithdrawDelegatorReward,
-)
+from pylum.protos.cosmos.distribution.v1beta1.tx_pb2 import MsgWithdrawDelegatorReward
 
 
 def create_withdraw_delegator_reward(delegator: Address, validator: Address):

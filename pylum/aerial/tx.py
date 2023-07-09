@@ -28,9 +28,7 @@ from google.protobuf.any_pb2 import Any as ProtoAny
 from pylum.aerial.coins import parse_coins
 from pylum.crypto.interface import Signer
 from pylum.crypto.keypairs import PublicKey
-from pylum.protos.cosmos.crypto.secp256k1.keys_pb2 import (
-    PubKey as ProtoPubKey,
-)
+from pylum.protos.cosmos.crypto.secp256k1.keys_pb2 import PubKey as ProtoPubKey
 from pylum.protos.cosmos.tx.signing.v1beta1.signing_pb2 import SignMode
 from pylum.protos.cosmos.tx.v1beta1.tx_pb2 import (
     AuthInfo,

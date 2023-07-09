@@ -31,9 +31,7 @@ import grpc
 from dateutil.parser import isoparse
 
 from pylum.aerial.client.bank import create_bank_send_msg
-from pylum.aerial.client.distribution import (
-    create_withdraw_delegator_reward,
-)
+from pylum.aerial.client.distribution import create_withdraw_delegator_reward
 from pylum.aerial.client.staking import (
     ValidatorStatus,
     create_delegate_msg,
@@ -60,16 +58,12 @@ from pylum.distribution.rest_client import DistributionRestClient
 from pylum.params.rest_client import ParamsRestClient
 from pylum.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
 from pylum.protos.cosmos.auth.v1beta1.query_pb2 import QueryAccountRequest
-from pylum.protos.cosmos.auth.v1beta1.query_pb2_grpc import (
-    QueryStub as AuthGrpcClient,
-)
+from pylum.protos.cosmos.auth.v1beta1.query_pb2_grpc import QueryStub as AuthGrpcClient
 from pylum.protos.cosmos.bank.v1beta1.query_pb2 import (
     QueryAllBalancesRequest,
     QueryBalanceRequest,
 )
-from pylum.protos.cosmos.bank.v1beta1.query_pb2_grpc import (
-    QueryStub as BankGrpcClient,
-)
+from pylum.protos.cosmos.bank.v1beta1.query_pb2_grpc import QueryStub as BankGrpcClient
 from pylum.protos.cosmos.crypto.ed25519.keys_pb2 import (  # noqa # pylint: disable=unused-import
     PubKey,
 )
@@ -97,9 +91,7 @@ from pylum.protos.cosmos.tx.v1beta1.service_pb2 import (
     GetTxRequest,
     SimulateRequest,
 )
-from pylum.protos.cosmos.tx.v1beta1.service_pb2_grpc import (
-    ServiceStub as TxGrpcClient,
-)
+from pylum.protos.cosmos.tx.v1beta1.service_pb2_grpc import ServiceStub as TxGrpcClient
 from pylum.staking.rest_client import StakingRestClient
 from pylum.tx.rest_client import TxRestClient
 
