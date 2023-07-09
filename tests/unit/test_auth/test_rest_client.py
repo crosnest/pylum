@@ -24,9 +24,9 @@ import unittest
 import pytest
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_lumnetwork.auth.rest_client import AuthRestClient
-from cosmpy_lumnetwork.common.utils import json_encode
-from cosmpy_lumnetwork.protos.cosmos.auth.v1beta1.query_pb2 import (
+from pylum.auth.rest_client import AuthRestClient
+from pylum.common.utils import json_encode
+from pylum.protos.cosmos.auth.v1beta1.query_pb2 import (
     QueryAccountRequest,
     QueryAccountResponse,
     QueryParamsRequest,

@@ -29,28 +29,28 @@ from pathlib import Path
 
 DOCS_DIR = Path("docs/")
 API_DIR = DOCS_DIR / "api/"
-COSMPY_DIR = Path("cosmpy_lumnetwork")
+COSMPY_DIR = Path("pylum")
 
 IGNORE_NAMES = {r"^__version__\.py$", r"^py\.typed$", r"^.*_pb2.py$"}
 IGNORE_PREFIXES = {
-    Path("cosmpy_lumnetwork", "__init__.py"),
-    Path("cosmpy_lumnetwork", "aerial", "__init__.py"),
-    Path("cosmpy_lumnetwork", "auth"),
-    Path("cosmpy_lumnetwork", "bank"),
-    Path("cosmpy_lumnetwork", "common"),
-    Path("cosmpy_lumnetwork", "crypto"),
-    Path("cosmpy_lumnetwork", "distribution"),
-    Path("cosmpy_lumnetwork", "evidence"),
-    Path("cosmpy_lumnetwork", "gov"),
-    Path("cosmpy_lumnetwork", "ibc"),
-    Path("cosmpy_lumnetwork", "params"),
-    Path("cosmpy_lumnetwork", "protos"),
-    Path("cosmpy_lumnetwork", "slashing"),
-    Path("cosmpy_lumnetwork", "staking"),
-    Path("cosmpy_lumnetwork", "tendermint"),
-    Path("cosmpy_lumnetwork", "tx"),
-    Path("cosmpy_lumnetwork", "upgrade"),
-    Path("cosmpy_lumnetwork", "whitelist.py"),
+    Path("pylum", "__init__.py"),
+    Path("pylum", "aerial", "__init__.py"),
+    Path("pylum", "auth"),
+    Path("pylum", "bank"),
+    Path("pylum", "common"),
+    Path("pylum", "crypto"),
+    Path("pylum", "distribution"),
+    Path("pylum", "evidence"),
+    Path("pylum", "gov"),
+    Path("pylum", "ibc"),
+    Path("pylum", "params"),
+    Path("pylum", "protos"),
+    Path("pylum", "slashing"),
+    Path("pylum", "staking"),
+    Path("pylum", "tendermint"),
+    Path("pylum", "tx"),
+    Path("pylum", "upgrade"),
+    Path("pylum", "whitelist.py"),
 }
 
 
@@ -101,7 +101,7 @@ def should_skip(module_path: Path) -> bool:
 
 
 def _generate_apidocs_cosmpy_modules() -> None:
-    """Generate API docs for cosmpy_lumnetwork.* modules."""
+    """Generate API docs for pylum.* modules."""
     for module_path in filter(is_not_dir, Path(COSMPY_DIR).rglob("*")):
         print(f"Processing {module_path}... ", end="")
         if should_skip(module_path):

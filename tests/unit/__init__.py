@@ -16,4 +16,4 @@
 #   limitations under the License.
 #
 # ------------------------------------------------------------------------------
-"""Test for cosmpy_lumnetwork aerial."""
+"""Test for pylum aerial."""

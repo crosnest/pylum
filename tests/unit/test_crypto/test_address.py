@@ -22,9 +22,9 @@
 import json
 import unittest
 
-from cosmpy_lumnetwork.common.utils import json_encode
-from cosmpy_lumnetwork.crypto.address import Address
-from cosmpy_lumnetwork.crypto.keypairs import PublicKey
+from pylum.common.utils import json_encode
+from pylum.crypto.address import Address
+from pylum.crypto.keypairs import PublicKey
 
 
 class AddressTestCase(unittest.TestCase):

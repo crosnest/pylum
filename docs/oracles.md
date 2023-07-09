@@ -15,11 +15,11 @@ The scripts also require the following imports:
 ```python
 from time import sleep
 import requests
-from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_lumnetwork.aerial.contract import LedgerContract
-from cosmpy_lumnetwork.aerial.wallet import LocalWallet
-from cosmpy_lumnetwork.crypto.address import Address
-from cosmpy_lumnetwork.crypto.keypairs import PrivateKey
+from pylum.aerial.client import LedgerClient, NetworkConfig
+from pylum.aerial.contract import LedgerContract
+from pylum.aerial.wallet import LocalWallet
+from pylum.crypto.address import Address
+from pylum.crypto.keypairs import PrivateKey
 ```
 
 ## Oracle deployer and updater

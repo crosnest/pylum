@@ -22,11 +22,11 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_lumnetwork.common.utils import json_encode
-from cosmpy_lumnetwork.ibc.applications.transfer.rest_client import (  # type: ignore
+from pylum.common.utils import json_encode
+from pylum.ibc.applications.transfer.rest_client import (  # type: ignore
     IBCApplicationsTransferRestClient,
 )
-from cosmpy_lumnetwork.protos.ibc.applications.transfer.v1.query_pb2 import (
+from pylum.protos.ibc.applications.transfer.v1.query_pb2 import (
     QueryDenomTraceRequest,
     QueryDenomTraceResponse,
     QueryDenomTracesRequest,

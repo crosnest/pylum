@@ -21,7 +21,7 @@
 
 import unittest
 
-from cosmpy_lumnetwork.crypto.keypairs import PrivateKey, PublicKey
+from pylum.crypto.keypairs import PrivateKey, PublicKey
 
 
 class KeyPairTestCase(unittest.TestCase):

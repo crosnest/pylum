@@ -21,10 +21,10 @@ from typing import Optional
 
 import pytest
 
-from cosmpy_lumnetwork.aerial.client import LedgerClient
-from cosmpy_lumnetwork.aerial.config import NetworkConfig
-from cosmpy_lumnetwork.aerial.faucet import FaucetApi
-from cosmpy_lumnetwork.aerial.wallet import LocalWallet
+from pylum.aerial.client import LedgerClient
+from pylum.aerial.config import NetworkConfig
+from pylum.aerial.faucet import FaucetApi
+from pylum.aerial.wallet import LocalWallet
 
 
 MAX_FLAKY_RERUNS = 3
