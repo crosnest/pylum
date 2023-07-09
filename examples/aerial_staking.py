@@ -20,11 +20,11 @@
 # ------------------------------------------------------------------------------
 import random
 
-from cosmpy_chain4energy.aerial.client import LedgerClient
-from cosmpy_chain4energy.aerial.config import NetworkConfig
-from cosmpy_chain4energy.aerial.faucet import FaucetApi
-from cosmpy_chain4energy.aerial.tx_helpers import SubmittedTx
-from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_lumnetwork.aerial.client import LedgerClient
+from cosmpy_lumnetwork.aerial.config import NetworkConfig
+from cosmpy_lumnetwork.aerial.faucet import FaucetApi
+from cosmpy_lumnetwork.aerial.tx_helpers import SubmittedTx
+from cosmpy_lumnetwork.aerial.wallet import LocalWallet
 
 
 def _wait_for_tx(operation: str, tx: SubmittedTx):

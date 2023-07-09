@@ -21,19 +21,18 @@
 import argparse
 from datetime import datetime, timedelta
 
-from google.protobuf import any_pb2, timestamp_pb2
-
-from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_chain4energy.aerial.client.utils import (
+from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_lumnetwork.aerial.client.utils import (
     prepare_and_broadcast_basic_transaction,
 )
-from cosmpy_chain4energy.aerial.faucet import FaucetApi
-from cosmpy_chain4energy.aerial.tx import Transaction
-from cosmpy_chain4energy.aerial.wallet import LocalWallet
-from cosmpy_chain4energy.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
-from cosmpy_chain4energy.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
-from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
-from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from cosmpy_lumnetwork.aerial.faucet import FaucetApi
+from cosmpy_lumnetwork.aerial.tx import Transaction
+from cosmpy_lumnetwork.aerial.wallet import LocalWallet
+from cosmpy_lumnetwork.protos.cosmos.authz.v1beta1.authz_pb2 import Grant
+from cosmpy_lumnetwork.protos.cosmos.authz.v1beta1.tx_pb2 import MsgGrant
+from cosmpy_lumnetwork.protos.cosmos.bank.v1beta1.authz_pb2 import SendAuthorization
+from cosmpy_lumnetwork.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from google.protobuf import any_pb2, timestamp_pb2
 
 
 def _parse_commandline():

@@ -1,10 +1,10 @@
-<a id="cosmpy_chain4energy.aerial.faucet"></a>
+<a id="cosmpy_lumnetwork.aerial.faucet"></a>
 
 # cosmpy`_`chain4energy.aerial.faucet
 
 Ledger faucet API interface.
 
-<a id="cosmpy_chain4energy.aerial.faucet.FaucetApi"></a>
+<a id="cosmpy_lumnetwork.aerial.faucet.FaucetApi"></a>
 
 ## FaucetApi Objects
 
@@ -14,7 +14,7 @@ class FaucetApi()
 
 Faucet API.
 
-<a id="cosmpy_chain4energy.aerial.faucet.FaucetApi.__init__"></a>
+<a id="cosmpy_lumnetwork.aerial.faucet.FaucetApi.__init__"></a>
 
 #### `__`init`__`
 
@@ -32,7 +32,7 @@ Init faucet API.
 
 - `ValueError`: Network config has no faucet url set
 
-<a id="cosmpy_chain4energy.aerial.faucet.FaucetApi.get_wealth"></a>
+<a id="cosmpy_lumnetwork.aerial.faucet.FaucetApi.get_wealth"></a>
 
 #### get`_`wealth
 

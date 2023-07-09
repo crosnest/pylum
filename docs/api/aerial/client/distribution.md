@@ -1,10 +1,10 @@
-<a id="cosmpy_chain4energy.aerial.client.distribution"></a>
+<a id="cosmpy_lumnetwork.aerial.client.distribution"></a>
 
 # cosmpy`_`chain4energy.aerial.client.distribution
 
 Distribution.
 
-<a id="cosmpy_chain4energy.aerial.client.distribution.create_withdraw_delegator_reward"></a>
+<a id="cosmpy_lumnetwork.aerial.client.distribution.create_withdraw_delegator_reward"></a>
 
 #### create`_`withdraw`_`delegator`_`reward
 

@@ -22,9 +22,9 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_chain4energy.common.utils import json_encode
-from cosmpy_chain4energy.gov.rest_client import GovRestClient
-from cosmpy_chain4energy.protos.cosmos.gov.v1beta1.query_pb2 import (
+from cosmpy_lumnetwork.common.utils import json_encode
+from cosmpy_lumnetwork.gov.rest_client import GovRestClient
+from cosmpy_lumnetwork.protos.cosmos.gov.v1beta1.query_pb2 import (
     QueryDepositRequest,
     QueryDepositResponse,
     QueryDepositsRequest,

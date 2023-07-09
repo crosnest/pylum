@@ -21,10 +21,10 @@
 
 import unittest
 
-from cosmpy_chain4energy.bank.rest_client import BankRestClient
-from cosmpy_chain4energy.common.utils import json_encode
-from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.bank_pb2 import Metadata, Params
-from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.query_pb2 import (
+from cosmpy_lumnetwork.bank.rest_client import BankRestClient
+from cosmpy_lumnetwork.common.utils import json_encode
+from cosmpy_lumnetwork.protos.cosmos.bank.v1beta1.bank_pb2 import Metadata, Params
+from cosmpy_lumnetwork.protos.cosmos.bank.v1beta1.query_pb2 import (
     QueryAllBalancesRequest,
     QueryAllBalancesResponse,
     QueryBalanceRequest,
@@ -40,10 +40,10 @@ from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.query_pb2 import (
     QueryTotalSupplyRequest,
     QueryTotalSupplyResponse,
 )
-from cosmpy_chain4energy.protos.cosmos.base.query.v1beta1.pagination_pb2 import (
+from cosmpy_lumnetwork.protos.cosmos.base.query.v1beta1.pagination_pb2 import (
     PageResponse,
 )
-from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+from cosmpy_lumnetwork.protos.cosmos.base.v1beta1.coin_pb2 import Coin
 
 from tests.helpers import MockRestClient
 

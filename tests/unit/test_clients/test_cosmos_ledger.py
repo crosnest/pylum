@@ -30,23 +30,23 @@
 #
 # from google.protobuf.json_format import MessageToDict, ParseDict
 #
-# from cosmpy_chain4energy.auth.interface import Auth
-# from cosmpy_chain4energy.auth.rest_client import AuthRestClient
-# from cosmpy_chain4energy.bank.rest_client import BankRestClient
-# from cosmpy_chain4energy.clients.crypto import CosmosCrypto
-# from cosmpy_chain4energy.cosmwasm.rest_client import CosmWasmRestClient
-# from cosmpy_chain4energy.crypto.address import Address
-# from cosmpy_chain4energy.crypto.keypairs import PrivateKey
-# from cosmpy_chain4energy.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
-# from cosmpy_chain4energy.protos.cosmos.auth.v1beta1.query_pb2 import (
+# from cosmpy_lumnetwork.auth.interface import Auth
+# from cosmpy_lumnetwork.auth.rest_client import AuthRestClient
+# from cosmpy_lumnetwork.bank.rest_client import BankRestClient
+# from cosmpy_lumnetwork.clients.crypto import CosmosCrypto
+# from cosmpy_lumnetwork.cosmwasm.rest_client import CosmWasmRestClient
+# from cosmpy_lumnetwork.crypto.address import Address
+# from cosmpy_lumnetwork.crypto.keypairs import PrivateKey
+# from cosmpy_lumnetwork.protos.cosmos.auth.v1beta1.auth_pb2 import BaseAccount
+# from cosmpy_lumnetwork.protos.cosmos.auth.v1beta1.query_pb2 import (
 #     QueryAccountRequest,
 #     QueryAccountResponse,
 #     QueryParamsRequest,
 #     QueryParamsResponse,
 # )
-# from cosmpy_chain4energy.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
-# from cosmpy_chain4energy.protos.cosmos.base.v1beta1.coin_pb2 import Coin
-# from cosmpy_chain4energy.protos.cosmos.tx.v1beta1.service_pb2 import (
+# from cosmpy_lumnetwork.protos.cosmos.base.abci.v1beta1.abci_pb2 import TxResponse
+# from cosmpy_lumnetwork.protos.cosmos.base.v1beta1.coin_pb2 import Coin
+# from cosmpy_lumnetwork.protos.cosmos.tx.v1beta1.service_pb2 import (
 #     BroadcastTxRequest,
 #     BroadcastTxResponse,
 #     GetTxRequest,
@@ -56,8 +56,8 @@
 #     SimulateRequest,
 #     SimulateResponse,
 # )
-# from cosmpy_chain4energy.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
-# from cosmpy_chain4energy.tx.interface import TxInterface
+# from cosmpy_lumnetwork.protos.cosmos.tx.v1beta1.tx_pb2 import Tx
+# from cosmpy_lumnetwork.tx.interface import TxInterface
 # from tests.helpers import MockRestClient
 #
 # # Private key

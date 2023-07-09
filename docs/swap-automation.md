@@ -4,10 +4,10 @@ The code will require the following imports:
 
 ```python
 from time import sleep
-from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_chain4energy.aerial.contract import LedgerContract
-from cosmpy_chain4energy.aerial.faucet import FaucetApi
-from cosmpy_chain4energy.aerial.wallet import LocalWallet
+from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_lumnetwork.aerial.contract import LedgerContract
+from cosmpy_lumnetwork.aerial.faucet import FaucetApi
+from cosmpy_lumnetwork.aerial.wallet import LocalWallet
 ```
 
 We will define the *swap_native_for_cw20* function that trades `swap_amount` of atestfet from `wallet` for CW20 tokens by executing a `pair_contract`:

@@ -21,7 +21,7 @@
 
 import unittest
 
-from cosmpy_chain4energy.crypto.keypairs import PrivateKey, PublicKey
+from cosmpy_lumnetwork.crypto.keypairs import PrivateKey, PublicKey
 
 
 class KeyPairTestCase(unittest.TestCase):

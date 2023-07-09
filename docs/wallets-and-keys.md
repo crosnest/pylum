@@ -3,8 +3,8 @@ To make changes on a network, you will need to start sending transactions to it.
 The following code outlines how to both generate a completely new private key and how to recover a previously generated one:
 
 ```python
-from cosmpy_chain4energy.aerial.wallet import LocalWallet
-from cosmpy_chain4energy.crypto.keypairs import PrivateKey
+from cosmpy_lumnetwork.aerial.wallet import LocalWallet
+from cosmpy_lumnetwork.crypto.keypairs import PrivateKey
 
 # To create a random private key:
 private_key = PrivateKey()

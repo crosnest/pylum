@@ -1,7 +1,7 @@
 To start interacting with a blockchain, you first need to establish a connection to a network node. You can use `LedgerClient` as a client object which takes a `NetworkConfig` as an argument.
 
 ```python
-from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
 
 ledger_client = LedgerClient(NetworkConfig.fetch_mainnet())
 ```

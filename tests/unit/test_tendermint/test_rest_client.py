@@ -22,8 +22,8 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_chain4energy.common.utils import json_encode
-from cosmpy_chain4energy.protos.cosmos.base.tendermint.v1beta1.query_pb2 import (
+from cosmpy_lumnetwork.common.utils import json_encode
+from cosmpy_lumnetwork.protos.cosmos.base.tendermint.v1beta1.query_pb2 import (
     GetBlockByHeightRequest,
     GetBlockByHeightResponse,
     GetLatestBlockRequest,
@@ -37,7 +37,7 @@ from cosmpy_chain4energy.protos.cosmos.base.tendermint.v1beta1.query_pb2 import 
     GetValidatorSetByHeightRequest,
     GetValidatorSetByHeightResponse,
 )
-from cosmpy_chain4energy.tendermint.rest_client import CosmosBaseTendermintRestClient
+from cosmpy_lumnetwork.tendermint.rest_client import CosmosBaseTendermintRestClient
 
 from tests.helpers import MockRestClient
 

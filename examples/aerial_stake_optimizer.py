@@ -22,21 +22,19 @@
 # ------------------------------------------------------------------------------
 import json
 
-from cosmpy_chain4energy.aerial.client import LedgerClient, NetworkConfig
-from cosmpy_chain4energy.aerial.client.distribution import (
+from cosmpy_lumnetwork.aerial.client import LedgerClient, NetworkConfig
+from cosmpy_lumnetwork.aerial.client.distribution import (
     create_withdraw_delegator_reward,
 )
-from cosmpy_chain4energy.aerial.client.staking import create_delegate_msg
-from cosmpy_chain4energy.aerial.faucet import FaucetApi
-from cosmpy_chain4energy.aerial.tx import SigningCfg, Transaction
-from cosmpy_chain4energy.aerial.wallet import LocalWallet
-from cosmpy_chain4energy.protos.cosmos.bank.v1beta1.query_pb2 import (
+from cosmpy_lumnetwork.aerial.client.staking import create_delegate_msg
+from cosmpy_lumnetwork.aerial.faucet import FaucetApi
+from cosmpy_lumnetwork.aerial.tx import SigningCfg, Transaction
+from cosmpy_lumnetwork.aerial.wallet import LocalWallet
+from cosmpy_lumnetwork.protos.cosmos.bank.v1beta1.query_pb2 import (
     QueryTotalSupplyRequest,
 )
-from cosmpy_chain4energy.protos.cosmos.params.v1beta1.query_pb2 import (
-    QueryParamsRequest,
-)
-from cosmpy_chain4energy.protos.cosmos.staking.v1beta1.query_pb2 import (
+from cosmpy_lumnetwork.protos.cosmos.params.v1beta1.query_pb2 import QueryParamsRequest
+from cosmpy_lumnetwork.protos.cosmos.staking.v1beta1.query_pb2 import (
     QueryValidatorsRequest,
 )
 

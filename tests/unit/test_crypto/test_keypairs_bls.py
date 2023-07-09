@@ -18,7 +18,7 @@
 # ------------------------------------------------------------------------------
 
 """Tests for BLS KeyPair module of the Crypto Package."""
-from cosmpy_chain4energy.crypto.keypairs_bls import (
+from cosmpy_lumnetwork.crypto.keypairs_bls import (
     PrivateKey,
     PublicKey,
     aggregate_signatures,

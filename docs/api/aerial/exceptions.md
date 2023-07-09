@@ -1,10 +1,10 @@
-<a id="cosmpy_chain4energy.aerial.exceptions"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions"></a>
 
 # cosmpy`_`chain4energy.aerial.exceptions
 
 Exceptions.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.QueryError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.QueryError"></a>
 
 ## QueryError Objects
 
@@ -14,7 +14,7 @@ class QueryError(RuntimeError)
 
 Invalid Query Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.NotFoundError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.NotFoundError"></a>
 
 ## NotFoundError Objects
 
@@ -24,7 +24,7 @@ class NotFoundError(QueryError)
 
 Not found Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.QueryTimeoutError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.QueryTimeoutError"></a>
 
 ## QueryTimeoutError Objects
 
@@ -34,7 +34,7 @@ class QueryTimeoutError(QueryError)
 
 Query timeout Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.BroadcastError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.BroadcastError"></a>
 
 ## BroadcastError Objects
 
@@ -44,7 +44,7 @@ class BroadcastError(RuntimeError)
 
 Broadcast Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.BroadcastError.__init__"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.BroadcastError.__init__"></a>
 
 #### `__`init`__`
 
@@ -59,7 +59,7 @@ Init Broadcast error.
 - `tx_hash`: transaction hash
 - `message`: message
 
-<a id="cosmpy_chain4energy.aerial.exceptions.OutOfGasError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.OutOfGasError"></a>
 
 ## OutOfGasError Objects
 
@@ -69,7 +69,7 @@ class OutOfGasError(BroadcastError)
 
 Insufficient Fess Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.OutOfGasError.__init__"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.OutOfGasError.__init__"></a>
 
 #### `__`init`__`
 
@@ -85,7 +85,7 @@ Initialize.
 - `gas_wanted`: gas required to complete the transaction
 - `gas_used`: gas used
 
-<a id="cosmpy_chain4energy.aerial.exceptions.InsufficientFeesError"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.InsufficientFeesError"></a>
 
 ## InsufficientFeesError Objects
 
@@ -95,7 +95,7 @@ class InsufficientFeesError(BroadcastError)
 
 Insufficient Fess Error.
 
-<a id="cosmpy_chain4energy.aerial.exceptions.InsufficientFeesError.__init__"></a>
+<a id="cosmpy_lumnetwork.aerial.exceptions.InsufficientFeesError.__init__"></a>
 
 #### `__`init`__`
 

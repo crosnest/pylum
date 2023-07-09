@@ -22,9 +22,9 @@
 import json
 import unittest
 
-from cosmpy_chain4energy.common.utils import json_encode
-from cosmpy_chain4energy.crypto.address import Address
-from cosmpy_chain4energy.crypto.keypairs import PublicKey
+from cosmpy_lumnetwork.common.utils import json_encode
+from cosmpy_lumnetwork.crypto.address import Address
+from cosmpy_lumnetwork.crypto.keypairs import PublicKey
 
 
 class AddressTestCase(unittest.TestCase):

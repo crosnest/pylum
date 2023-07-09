@@ -1,27 +1,23 @@
 COSMOS_SDK_URL := https://github.com/cosmos/cosmos-sdk
-COSMOS_SDK_VERSION := v0.46.10
+COSMOS_SDK_VERSION := v0.46.13
 COSMOS_SDK_DIR := build/cosmos-sdk-proto-schema
 
-WASMD_URL := https://github.com/CosmWasm/wasmd
-WASMD_VERSION := v0.27.0
-WASMD_DIR := build/wasm-proto-shema
-
 IBCGO_URL := https://github.com/cosmos/ibc-go
-IBCGO_VERSION := v5.2.0
+IBCGO_VERSION := v5.2.1
 IBCGO_DIR := build/ibcgo-proto-schema
 
-C4E_URL := https://github.com/chain4energy/c4e-chain
-C4E_VERSION := v1.2.0
-C4E_DIR := build/c4e-proto-schema
+CHAIN_URL := https://github.com/lum-network/chain
+CHAIN_VERSION := v1.4.5
+CHAIN_DIR := build/chain-proto-schema
 
-C4EPY_PROTOS_DIR := cosmpy_chain4energy/protos
-C4EPY_SRC_DIR := cosmpy_chain4energy
-C4EPY_TESTS_DIR := tests
-C4EPY_EXAMPLES_DIR := examples
-C4EPY_SCRIPTS_DIR := scripts
+PYLUM_PROTOS_DIR := cosmpy_lumnetwork/protos
+PYLUM_SRC_DIR := cosmpy_lumnetwork
+PYLUM_TESTS_DIR := tests
+PYLUM_EXAMPLES_DIR := examples
+PYLUM_SCRIPTS_DIR := scripts
 
 PROTO_THIRDPARTY_URL := https://github.com/regen-network/protobuf
-PROTO_THIRDPARTY_VERSION := v1.3.3-alpha.regen.1
+PROTO_THIRDPARTY_VERSION := v1.3.2-alpha.regen.4
 PROTO_THIRDPARTY_DIR := build/gogoproto-proto-schema
 
 COSMOS_PROTO_URL := https://github.com/cosmos/cosmos-proto
@@ -32,7 +28,12 @@ GOOGLEAPI_PROTO_URL := https://github.com/googleapis/googleapis.git
 GOOGLEAPI_PROTO_VERSION := common-protos-1_3_1
 GOOGLEAPI_PROTO_DIR := build/googleapi-proto-schema
 
-PYTHON_CODE_DIRS := $(C4EPY_SRC_DIR) $(C4EPY_TESTS_DIR) $(C4EPY_EXAMPLES_DIR) $(C4EPY_SCRIPTS_DIR)
+ICS23_PROTO_URL := https://github.com/confio/ics23
+ICS23_PROTO_VERSION := v0.9.0
+ICS23_PROTOS_DIR := build/ics23_proto-schema
+
+
+PYTHON_CODE_DIRS := $(PYLUM_SRC_DIR) $(PYLUM_TESTS_DIR) $(PYLUM_EXAMPLES_DIR) $(PYLUM_SCRIPTS_DIR)
 
 ########################################
 ### Initialise dev environment
@@ -59,18 +60,18 @@ new-env: clean
 # Run all tests
 .PHONY: test
 test:
-	coverage run -m pytest $(C4EPY_TESTS_DIR) --doctest-modules
+	coverage run -m pytest $(PYLUM_TESTS_DIR) --doctest-modules
 	$(MAKE) coverage-report
 
 # Run all unit tests
 .PHONY: unit-test
 unit-test:
-	coverage run -m pytest $(C4EPY_TESTS_DIR) --doctest-modules -m "not integration"
+	coverage run -m pytest $(PYLUM_TESTS_DIR) --doctest-modules -m "not integration"
 
 # Run all integration tests
 .PHONY: integration-test
 integration-test:
-	coverage run -m pytest $(C4EPY_TESTS_DIR) --doctest-modules -m "integration"
+	coverage run -m pytest $(PYLUM_TESTS_DIR) --doctest-modules -m "integration"
 
 # Produce the coverage report. Can see a report summary on the terminal.
 # Detailed report on all modules are placed under /coverage-report
@@ -90,7 +91,7 @@ lint: black isort flake8 vulture
 # Automatically format the code using black
 .PHONY: black
 black:
-	black $(PYTHON_CODE_DIRS) --exclude $(C4EPY_PROTOS_DIR)
+	black $(PYTHON_CODE_DIRS) --exclude $(PYLUM_PROTOS_DIR)
 
 # Automatically sort the imports
 .PHONY: isort
@@ -100,7 +101,7 @@ isort:
 # Check the code format
 .PHONY: black-check
 black-check:
-	black --check --verbose $(PYTHON_CODE_DIRS) --exclude $(C4EPY_PROTOS_DIR)
+	black --check --verbose $(PYTHON_CODE_DIRS) --exclude $(PYLUM_PROTOS_DIR)
 
 # Check the imports are sorted
 .PHONY: isort-check
@@ -128,8 +129,8 @@ security: bandit safety
 # Check the security of the code
 .PHONY: bandit
 bandit:
-	bandit -r $(C4EPY_SRC_DIR) $(C4EPY_TESTS_DIR) -s B101
-	bandit -r $(C4EPY_EXAMPLES_DIR) -s B101,B105
+	bandit -r $(PYLUM_SRC_DIR) $(PYLUM_TESTS_DIR) -s B101
+	bandit -r $(PYLUM_EXAMPLES_DIR) -s B101,B105
 
 # Check the security of the code for known vulnerabilities
 .PHONY: safety
@@ -143,7 +144,7 @@ safety:
 # Check types (statically) using mypy
 .PHONY: mypy
 mypy:
-	mypy $(PYTHON_CODE_DIRS) --exclude $(C4EPY_PROTOS_DIR)
+	mypy $(PYTHON_CODE_DIRS) --exclude $(PYLUM_PROTOS_DIR)
 
 # Lint the code using pylint
 .PHONY: pylint
@@ -270,23 +271,24 @@ unique = $(if $1,$(firstword $1) $(call unique,$(filter-out $(firstword $1),$1))
 proto: fetch_proto_schema_source generate_proto_types generate_init_py_files
 
 generate_proto_types: download_sources apply_third_party
-	rm -frv $(C4EPY_PROTOS_DIR)/*
-#	python3 -m grpc_tools.protoc --proto_path=$(WASMD_DIR)/proto --proto_path=$(WASMD_DIR)/third_party/proto  --python_out=$(C4EPY_PROTOS_DIR) --grpc_python_out=$(C4EPY_PROTOS_DIR) $(shell find $(WASMD_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
-	python3 -m grpc_tools.protoc --proto_path=$(IBCGO_DIR)/proto --proto_path=$(IBCGO_DIR)/third_party/proto --python_out=$(C4EPY_PROTOS_DIR) --grpc_python_out=$(C4EPY_PROTOS_DIR) $(shell find $(IBCGO_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	rm -frv $(PYLUM_PROTOS_DIR)/*
+	python3 -m grpc_tools.protoc --proto_path=$(IBCGO_DIR)/proto --proto_path=$(IBCGO_DIR)/third_party/proto --python_out=$(PYLUM_PROTOS_DIR) --grpc_python_out=$(PYLUM_PROTOS_DIR) $(shell find $(IBCGO_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
 # ensure cosmos-sdk is last as previous modules may have duplicated proto models which are now outdated
-#	python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --python_betterproto_out=$(C4EPY_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) \( -not -path */nft/* \) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
-#	find $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto -exec python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --python_betterproto_out=$(C4EPY_PROTOS_DIR)  {} \;
+#	python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --python_betterproto_out=$(PYLUM_PROTOS_DIR) $(shell find $(COSMOS_SDK_DIR) \( -not -path */nft/* \) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+#	find $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto -exec python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --python_betterproto_out=$(PYLUM_PROTOS_DIR)  {} \;
 	# other chains modules
-	python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --proto_path=$(C4E_DIR)/proto --python_out=$(C4EPY_PROTOS_DIR) --grpc_python_out=$(C4EPY_PROTOS_DIR) $(shell find $(C4E_DIR) $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
+	python3 -m grpc_tools.protoc --proto_path=$(COSMOS_SDK_DIR)/proto --proto_path=$(COSMOS_SDK_DIR)/third_party/proto --proto_path=$(CHAIN_DIR)/proto \
+	--python_out=$(PYLUM_PROTOS_DIR) --grpc_python_out=$(PYLUM_PROTOS_DIR) \
+	$(shell find $(CHAIN_DIR) $(COSMOS_SDK_DIR) \( -path */proto/* -or -path */third_party/proto/* \) -type f -name *.proto)
 
-fetch_proto_schema_source: $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR) $(C4E_DIR)
+fetch_proto_schema_source: $(COSMOS_SDK_DIR) $(IBCGO_DIR) $(CHAIN_DIR)
 
 .PHONY: generate_init_py_files
 generate_init_py_files: generate_proto_types
     # restore __init__.py files if missing
-	find $(C4EPY_PROTOS_DIR)/ -type d -exec sh -c 'test -e "'{}'/__init__.py" || touch "'{}'/__init__.py"' \;
+	find $(PYLUM_PROTOS_DIR)/ -type d -exec sh -c 'test -e "'{}'/__init__.py" || touch "'{}'/__init__.py"' \;
 # restore root __init__.py as it contains code to have the proto files module available
-	git restore $(C4EPY_PROTOS_DIR)/__init__.py
+	git restore $(PYLUM_PROTOS_DIR)/__init__.py
 
 $(SOURCE): $(COSMOS_SDK_DIR)
 
@@ -298,13 +300,13 @@ $(INIT_PY_FILES_TO_CREATE): $(GENERATED_DIRS)
 
 download_sources:
 	echo "download sources"
-	make $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR) $(C4E_DIR)
+	make $(COSMOS_SDK_DIR) $(ICS23_DIR) $(IBCGO_DIR) $(CHAIN_DIR)
 
 apply_third_party:
 	echo "apply third_party"
-	make $(PROTO_THIRDPARTY_DIR) $(COSMOS_PROTO_DIR) $(GOOGLEAPI_PROTO_DIR)
+	make $(PROTO_THIRDPARTY_DIR) $(COSMOS_PROTO_DIR) $(GOOGLEAPI_PROTO_DIR) $(ICS23_PROTO_DIR)
 
-$(GENERATED_DIRS): $(COSMOS_SDK_DIR) $(WASMD_DIR) $(IBCGO_DIR) $(C4E_DIR)
+$(GENERATED_DIRS): $(COSMOS_SDK_DIR) $(IBCGO_DIR) $(CHAIN_DIR)
 
 $(GOOGLEAPI_PROTO_DIR): Makefile
 	rm -rf $(GOOGLEAPI_PROTO_DIR)
@@ -329,26 +331,30 @@ $(PROTO_THIRDPARTY_DIR): Makefile
 	mkdir -p $(COSMOS_SDK_DIR)/third_party/proto/google/protobuf
 	find ${PROTO_THIRDPARTY_DIR}/protobuf -type f -name "*.proto" -exec cp {} $(COSMOS_SDK_DIR)/third_party/proto/google/protobuf \;
 
+$(ICS23_PROTO_DIR): Makefile
+	rm -rf $(ICS23_PROTO_DIR)
+	git clone --branch $(ICS23_PROTO_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(ICS23_PROTO_URL) $(ICS23_PROTO_DIR)
+	cd $(ICS23_PROTO_DIR) && git checkout $(ICS23_PROTO_VERSION) -- $(ICS23_PROTO_RELATIVE_DIRS)
+	mkdir -p $(COSMOS_SDK_DIR)/third_party/proto/confio
+	cp -a $(ICS23_PROTO_DIR)/proofs.proto $(COSMOS_SDK_DIR)/third_party/proto/confio/
 
 $(COSMOS_SDK_DIR): Makefile
 	rm -rf $(COSMOS_SDK_DIR)
 	git clone --branch $(COSMOS_SDK_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(COSMOS_SDK_URL) $(COSMOS_SDK_DIR)
 	cd $(COSMOS_SDK_DIR) && git checkout $(COSMOS_SDK_VERSION) -- $(COSMOS_PROTO_RELATIVE_DIRS)
+	rm -rf $(COSMOS_SDK_DIR)/third_party/proto
 
-$(WASMD_DIR): Makefile
-	rm -rf $(WASMD_DIR)
-	git clone --branch $(WASMD_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(WASMD_URL) $(WASMD_DIR)
-	cd $(WASMD_DIR) && git checkout $(WASMD_VERSION) -- $(WASMD_PROTO_RELATIVE_DIRS)
 
 $(IBCGO_DIR): Makefile
 	rm -rf $(IBCGO_DIR)
 	git clone --branch $(IBCGO_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(IBCGO_URL) $(IBCGO_DIR)
 	cd $(IBCGO_DIR) && git checkout $(IBCGO_VERSION) -- $(IBCGO_PROTO_RELATIVE_DIRS)
 
-$(C4E_DIR): Makefile
-	rm -rf $(C4E_DIR)
-	git clone --branch $(C4E_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(C4E_URL) $(C4E_DIR)
-	cd $(C4E_DIR) && git checkout $(C4E_VERSION) -- $(C4E_PROTO_RELATIVE_DIRS)
+$(CHAIN_DIR): Makefile
+	rm -rf $(CHAIN_DIR)
+	git clone --branch $(CHAIN_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(CHAIN_URL) $(CHAIN_DIR)
+	cd $(CHAIN_DIR) && git checkout $(CHAIN_VERSION) -- $(CHAIN_PROTO_RELATIVE_DIRS)
+	rm -rf $(CHAIN_DIR)/third_party/proto
 
 debug:
 	$(info SOURCES_REGEX_TO_EXCLUDE: $(SOURCES_REGEX_TO_EXCLUDE))
@@ -396,11 +402,11 @@ check-api-docs-ci:
 	python scripts/generate_api_docs.py --check-clean
 
 checkout-chain-sources: Makefile
-	git clone --branch $(C4E_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(C4E_URL) chain4energy-chain
-	cd chain4energy-chain && git checkout $(C4E_VERSION) -- $(C4E_PROTO_RELATIVE_DIRS)
+	git clone --branch $(CHAIN_VERSION) --depth 1 --quiet --no-checkout --filter=blob:none $(CHAIN_URL) chain4energy-chain
+	cd chain4energy-chain && git checkout $(CHAIN_VERSION) -- $(CHAIN_PROTO_RELATIVE_DIRS)
 
 run-service-docker:
-	docker build  --build-arg VERSION=$(C4E_VERSION) --build-arg REPOSITORY=$(C4E_URL) -t c4echain_serve ./scripts/
+	docker build  --build-arg VERSION=$(CHAIN_VERSION) --build-arg REPOSITORY=$(CHAIN_URL) -t c4echain_serve ./scripts/
 	docker run --name testchain -v $(PWD):/test -d -p 1317:1317 -p 4500:4500 -p 26657:26657 -t --rm c4echain_serve chain serve --skip-proto
 
 test-docker: run-service-docker

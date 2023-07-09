@@ -22,11 +22,11 @@ from unittest import TestCase
 
 from google.protobuf.json_format import ParseDict
 
-from cosmpy_chain4energy.common.utils import json_encode
-from cosmpy_chain4energy.ibc.applications.transfer.rest_client import (  # type: ignore
+from cosmpy_lumnetwork.common.utils import json_encode
+from cosmpy_lumnetwork.ibc.applications.transfer.rest_client import (  # type: ignore
     IBCApplicationsTransferRestClient,
 )
-from cosmpy_chain4energy.protos.ibc.applications.transfer.v1.query_pb2 import (
+from cosmpy_lumnetwork.protos.ibc.applications.transfer.v1.query_pb2 import (
     QueryDenomTraceRequest,
     QueryDenomTraceResponse,
     QueryDenomTracesRequest,

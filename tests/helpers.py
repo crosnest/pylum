@@ -23,7 +23,7 @@ from typing import List, Optional
 
 from google.protobuf.descriptor import Descriptor
 
-from cosmpy_chain4energy.common.rest_client import RestClient
+from cosmpy_lumnetwork.common.rest_client import RestClient
 
 
 class MockRestClient(RestClient):

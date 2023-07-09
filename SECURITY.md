@@ -1,10 +1,10 @@
 # Security Policy
 
-Security is very important for Fetch.ai, Cros Nest and its community. This document outlines security procedures and general policies for the `cosmpy_chain4energy` project.
+Security is very important for Fetch.ai, Cros Nest and its community. This document outlines security procedures and general policies for the `cosmpy_lumnetwork` project.
 
 ## Supported Versions
 
-The following table shows which versions of `cosmpy_chain4energy` are currently being supported with security updates.
+The following table shows which versions of `cosmpy_lumnetwork` are currently being supported with security updates.
 
 | Version  | Supported          |
 |----------| ------------------ |
@@ -12,7 +12,7 @@ The following table shows which versions of `cosmpy_chain4energy` are currently 
 
 ## Reporting a Vulnerability
 
-The `cosmpy_chain4energy` team and community take all security bugs in `cosmpy_chain4energy` seriously. We appreciate your efforts and responsible disclosure and will make every effort to acknowledge your contributions.
+The `cosmpy_lumnetwork` team and community take all security bugs in `cosmpy_lumnetwork` seriously. We appreciate your efforts and responsible disclosure and will make every effort to acknowledge your contributions.
 In case of the bug can be found in the `CosmPy` project, please report to `CosmPy` team first.
 
 Report security bugs by emailing `developer@cros-nest.com`.
